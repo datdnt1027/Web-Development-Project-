@@ -9,7 +9,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<<<<<<< Updated upstream
     <title>Admin</title>
+=======
+    <title>Admin Page</title>
+>>>>>>> Stashed changes
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -75,18 +79,33 @@
         });
       });
 </script>
+<<<<<<< Updated upstream
 
 <!--===Header===-->
 <%@ include file="/common/admin/header.jsp"%>
 
 <!--=== Left Side Bar===-->
 <%@ include file="/common/admin/left.jsp" %>
+=======
+<!--=== Header ===-->
+<%@ include file="/common/admin/header.jsp"%>
+
+
+<!--==== Left Sidebar ===-->
+<%@ include file="/common/admin/left.jsp"%>
+
+
+>>>>>>> Stashed changes
 
 <!-- body -->
 <dec:body />
 <!-- body -->
 
+<<<<<<< Updated upstream
 <!--=== Footer===-->
+=======
+<!--=== Footer v4 ===-->
+>>>>>>> Stashed changes
 <jsp:include page="/common/admin/footer.jsp"></jsp:include>
 
 </body>
