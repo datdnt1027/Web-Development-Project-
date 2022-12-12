@@ -185,7 +185,7 @@
                     </li>
                     <li class="nav-item">
                         <a href="{{ url_for('logout') }}" class="nav-link">
-                            <i class="nav-icon fas fa-store"></i>
+                            <i class="nav-icon fas fa-product"></i>
                             <p>
                                 Product
                             </p>

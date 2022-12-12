@@ -2,8 +2,6 @@ package Controller.Vendor;
 
 import java.io.File;
 import java.io.IOException;
-import java.sql.Date;
-import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.servlet.RequestDispatcher;
@@ -23,18 +21,29 @@ import Services.IStoreServices;
 import Services.Impl.StoreServicesImpl;
 import Utils.Constant;
 
-@WebServlet(urlPatterns = { "/vendor/store/add" })
-public class AddStoreController extends HttpServlet {
+
+@WebServlet(urlPatterns = {"/vendor/store/edit"})
+public class EditStoreController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
+	String fileNamew;
+	int id_goc;
 	IStoreServices storeServices = new StoreServicesImpl();
 	@Override
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/vendor/addStore.jsp");
-		dispatcher.forward(req, resp);
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String id = request.getParameter("StoreId");
+		Store store = storeServices.FindById(Integer.parseInt(id));
+		id_goc = store.getId();
+		fileNamew = store.getAvatar();
+		request.setAttribute("store", store);
+		RequestDispatcher dispatcher = request.getRequestDispatcher("/view/vendor/edit.jsp");
+		dispatcher.forward(request, response);
 	}
+	
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Store store = new Store();
+		store.setId(id_goc);
+		store.setAvatar(fileNamew);
 		DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();
 		ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
 		servletFileUpload.setHeaderEncoding("UTF-8");
@@ -62,7 +71,7 @@ public class AddStoreController extends HttpServlet {
 				else if(item.getFieldName().equals("wallet")) {
 					store.setE_wallet(Integer.parseInt(item.getString("UTF-8")));
 				}
-				else if(item.getFieldName().equals("image")) {
+				else if(item.getFieldName().equals("image") && item.toString().contains(".")) {
 					String originalFileName = item.getName();
 					int index = originalFileName.lastIndexOf(".");
 					String ext = originalFileName.substring(index + 1);
@@ -73,7 +82,7 @@ public class AddStoreController extends HttpServlet {
 				}
 				store.setActive(true);
 			}
-			storeServices.Insert(store);
+			storeServices.Edit(store);
 			response.sendRedirect(request.getContextPath() + "/vendor/store");
 		} catch (FileUploadException e) {
 			e.printStackTrace();

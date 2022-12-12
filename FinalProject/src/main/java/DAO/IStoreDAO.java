@@ -8,6 +8,6 @@ public interface IStoreDAO {
 	List<Store> finALL();
 	void Insert(Store store);
 	void Delete(int storeId);
-	void EditCategory(Store store);
-
+	void EditStore(Store store);
+	Store FindById(int id);
 }

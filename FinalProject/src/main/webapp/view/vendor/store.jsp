@@ -30,7 +30,7 @@
                             <h3 class="card-title">Manage Store</h3>
                             <div class="float-sm-right">
                                 <button class="btn btn-block bg-gradient-info"
-                                        onclick="window.location.href='{{url_for('addproduct')}}'">New A Store
+                                        onclick="/vendor/store/add"><a class="link-secondary" href="<c:url value='/vendor/store/add'/> ">New A Store</a>
                                 </button>
                             </div>
                         </div>
@@ -63,14 +63,8 @@
                                     <td>${store.createdAt}</td>
                                     <td><img src="${pageContext.request.contextPath}/assets/images/store/${store.avatar}" width="50"
                                              height="40"></td>
-                                    <td><a href="{{url_for('updateproduct',id=product.id)}}"
-                                           class="btn btn-info ">Edit</a></td>
-                                    <td>
-                                        <button type="button" class="btn  btn-danger" data-toggle="modal"
-                                                data-target="#staticBackdrop-{{product.id}}">
-                                            Delete
-                                        </button>
-                                    </td>
+                                    <td><a href="<c:url value='/vendor/store/edit?StoreId=${store.id}'/>" class="btn btn-info ">Edit</a></td>
+                                    <td><a href="<c:url value='/vendor/store/delete?StoreId=${store.id}'/>" class="btn btn-danger ">Delete</a></td>
                                 </tr>
             					
             					</c:forEach>
@@ -97,7 +91,7 @@
                                                     Cancel
                                                 </button>
                                                 <form action="{{url_for('deleteproduct', id=product.id)}}"
-                                                      method="POST">
+                                                      method="GET">
                                                     <button type="submit" class="btn btn-danger">Delete</button>
                                                 </form>
 

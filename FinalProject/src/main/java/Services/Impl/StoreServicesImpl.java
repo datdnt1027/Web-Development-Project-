@@ -18,4 +18,18 @@ public class StoreServicesImpl extends Connection implements IStoreServices {
 	public void Insert(Store store) {
 		storeDAO.Insert(store);
 	}
+	@Override
+	public void Delete(int StoreID) {
+		storeDAO.Delete(StoreID);
+		
+	}
+	@Override
+	public void Edit(Store store) {
+		storeDAO.EditStore(store);
+	}
+	@Override
+	public Store FindById(int id) {
+		return storeDAO.FindById(id);
+	}
+	
 }
