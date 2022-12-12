@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="/common/taglib.jsp"%>
+    pageEncoding="UTF-8"%>
 
-<!-- Site wrapper -->
+    
+ <!-- Site wrapper -->
 <div class="wrapper">
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">

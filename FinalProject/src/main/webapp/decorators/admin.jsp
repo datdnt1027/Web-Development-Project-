@@ -76,13 +76,17 @@
       });
 </script>
 
+<!--===Header===-->
 <%@ include file="/common/admin/header.jsp"%>
+
+<!--=== Left Side Bar===-->
+<%@ include file="/common/admin/left.jsp" %>
 
 <!-- body -->
 <dec:body />
 <!-- body -->
 
-<!--=== Footer v4 ===-->
+<!--=== Footer===-->
 <jsp:include page="/common/admin/footer.jsp"></jsp:include>
 
 </body>
