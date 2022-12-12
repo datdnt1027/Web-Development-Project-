@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ include file="/common/taglib.jsp" %>
     
  <!-- Site wrapper -->
 <div class="wrapper">
@@ -176,7 +176,7 @@
                         </a>
                     </li> -->
                     <li class="nav-item">
-                        <a href="{{ url_for('logout') }}" class="nav-link">
+                        <a href="<c:url value='/vendor/store'/>" class="nav-link">
                             <i class="nav-icon fas fa-store"></i>
                             <p>
                                 Store
@@ -184,10 +184,10 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="{{ url_for('logout') }}" class="nav-link">
-                            <i class="nav-icon fas fa-product"></i>
+                        <a href="<c:url value='/vendor/store'/>" class="nav-link">
+                            <i class="nav-icon fas fa-circle"></i>
                             <p>
-                                Product
+                                Order
                             </p>
                         </a>
                     </li>

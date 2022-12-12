@@ -58,11 +58,10 @@
             					
             					 <tr>
                                     <td>${store.id}</td>
-                                    <td>${store.name}</td>
+                                    <td><a href="<c:url value='/vendor/product?storeId=${store.id}'/>" class="">${store.name}</a></td>
                                     <td>${store.e_wallet}</td>
                                     <td>${store.createdAt}</td>
-                                    <td><img src="${pageContext.request.contextPath}/assets/images/store/${store.avatar}" width="50"
-                                             height="40"></td>
+                                    <td><img src="${pageContext.request.contextPath}/assets/images/store/${store.avatar}" width="50" height="40"></td>
                                     <td><a href="<c:url value='/vendor/store/edit?StoreId=${store.id}'/>" class="btn btn-info ">Edit</a></td>
                                     <td><a href="<c:url value='/vendor/store/delete?StoreId=${store.id}'/>" class="btn btn-danger ">Delete</a></td>
                                 </tr>
