@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
-<
+
 <!-- /.navbar -->
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -23,7 +23,7 @@
 				<li class="nav-item has-treeview"><a href="#" class="nav-link ">
 						<i class="nav-icon fas fa-tachometer-alt"></i>
 						<p>
-							Cửa hàng <i class="right fas fa-angle-left"></i>
+							<i class="right fas fa-angle-left"></i>
 						</p>
 				</a>
 					<ul class="nav nav-treeview">
@@ -73,7 +73,7 @@
 						<li class="nav-item"><a href="{{url_for('categories')}}"
 							class="nav-link {% if request.endpoint == 'categories' %} active {% endif %}">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Quản lí loại sản phẩm</p>
+								<p>Quản lý sản phẩm</p>
 						</a></li>
 						<li class="nav-item"><a href="{{url_for('addcat')}}"
 							class="nav-link {% if request.endpoint == 'addcat' %} active {% endif %}">

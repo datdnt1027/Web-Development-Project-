@@ -18,5 +18,13 @@ public class HomeControllerAdmin extends HttpServlet {
 		RequestDispatcher rq = req.getRequestDispatcher("/view/admin/home.jsp");
 		rq.forward(req, resp);
 	}
+
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		resp.setContentType("text/html");
+		resp.setCharacterEncoding("UTF-8");
+		req.setCharacterEncoding("UTF-8");
+	}
+	
 	
 }
