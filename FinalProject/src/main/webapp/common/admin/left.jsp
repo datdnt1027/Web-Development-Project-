@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-
+<%@ include file="/common/taglib.jsp" %>
 
 <!-- /.navbar -->
 <!-- Main Sidebar Container -->
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<!-- Brand Logo -->
 	<a href="admin" class="brand-link"> <img
-		src="{{url_for('static',filename='images/phone.jpg')}}" alt="Logo"
+		src="${template}admin/img/logo-xs.png" alt="Logo"
 		class="brand-image img-circle elevation-3" style="opacity: .8">
 		<span class="brand-text font-weight-light">E.Store Manager</span>
 	</a>
@@ -23,7 +23,7 @@
 				<li class="nav-item has-treeview"><a href="#" class="nav-link ">
 						<i class="nav-icon fas fa-tachometer-alt"></i>
 						<p>
-							<i class="right fas fa-angle-left"></i>
+							Cửa hàng<i class="right fas fa-angle-left"></i>
 						</p>
 				</a>
 					<ul class="nav nav-treeview">
@@ -39,9 +39,9 @@
 						</a></li>
 					</ul></li>
 				<li
-					class="nav-item has-treeview {% if request.endpoint == 'brands' or request.endpoint == 'addbrand' %} menu-open {% endif %}">
+					class="nav-item has-treeview">
 					<a href="#"
-					class="nav-link {% if request.endpoint == 'brands' or request.endpoint == 'addbrand' %} active {% endif %}">
+					class="nav-link ">
 						<i class="nav-icon fas fa-table"></i>
 						<p>
 							Nhãn hàng <i class="right fas fa-angle-left"></i>
@@ -61,9 +61,9 @@
 					</ul>
 				</li>
 				<li
-					class="nav-item has-treeview {% if request.endpoint == 'categories' or request.endpoint == 'addcat' %} menu-open {% endif %}">
+					class="nav-item has-treeview ">
 					<a href="#"
-					class="nav-link {% if request.endpoint == 'categories' or request.endpoint == 'addcat' %} active {% endif %}">
+					class="nav-link ">
 						<i class="nav-icon far fa-plus-square"></i>
 						<p>
 							Loại sản phẩm <i class="right fas fa-angle-left"></i>
@@ -83,9 +83,9 @@
 					</ul>
 				</li>
 				<li
-					class="nav-item has-treeview {% if request.endpoint == 'product' or request.endpoint == 'addproduct' %} menu-open {% endif %}">
+					class="nav-item has-treeview ">
 					<a href="{{url_for('product')}}"
-					class="nav-link {% if request.endpoint == 'product' or request.endpoint == 'addproduct' %} active {% endif %}">
+					class="nav-link ">
 						<i class="nav-icon fas fa-barcode"></i>
 						<p>
 							Sản phẩm <i class="right fas fa-angle-left"></i>
@@ -106,13 +106,13 @@
 				</li>
 
 				<li class="nav-item"><a href="{{ url_for('orders_manager')}}"
-					class="nav-link {% if request.endpoint == 'orders' %} active {% endif %}">
+					class="nav-link ">
 						<i class="nav-icon fas fa-inbox"></i>
 						<p>Quản lí đơn hàng</p>
 				</a></li>
 				<li class="nav-item"><a
 					href="{{ url_for('changes_password') }}"
-					class="nav-link {% if request.endpoint == 'changes_password' %} active {% endif %}">
+					class="nav-link ">
 						<i class="nav-icon fas fa-edit"></i>
 						<p>Quản lí doanh thu</p>
 				</a></li>
