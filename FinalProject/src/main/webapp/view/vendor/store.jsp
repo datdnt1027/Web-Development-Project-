@@ -1,8 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
-
-
+<%@ include file="/common/taglib.jsp" %>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -32,7 +30,7 @@
                             <h3 class="card-title">Manage Store</h3>
                             <div class="float-sm-right">
                                 <button class="btn btn-block bg-gradient-info"
-                                        onclick="window.location.href='{{url_for('addproduct')}}'">New A Product
+                                        onclick="window.location.href='{{url_for('addproduct')}}'">New A Store
                                 </button>
                             </div>
                         </div>
@@ -48,7 +46,6 @@
                                 <tr>
                                     <th>ID</th>
                                     <th>Store Name</th>
-                                    <th>Active</th>
                                     <th>e_wallet</th>
                                     <th>createdAt</th>
                                     <th>Image</th>
@@ -57,14 +54,14 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-            
-                                <tr>
-                                    <td>loop.index</td>
-                                    <td>product.name</td>
-                                    <td>product.price</td>
-                                    <td>product.discount %</td>
-                                    <td>product.category_id</td>
-                                    <td><img src="{{url_for('static',filename='images/'+product.image_1)}}" width="50"
+            					<c:forEach items="${stores}" var="store">
+            					
+            					 <tr>
+                                    <td>${store.id}</td>
+                                    <td>${store.name}</td>
+                                    <td>${store.e_wallet}</td>
+                                    <td>${store.createdAt}</td>
+                                    <td><img src="${pageContext.request.contextPath}/assets/images/store/${store.avatar}" width="50"
                                              height="40"></td>
                                     <td><a href="{{url_for('updateproduct',id=product.id)}}"
                                            class="btn btn-info ">Edit</a></td>
@@ -75,6 +72,9 @@
                                         </button>
                                     </td>
                                 </tr>
+            					
+            					</c:forEach>
+                               
                                 <!-- Modal -->
                                 <div class="modal fade" id="staticBackdrop-{{product.id}}" data-backdrop="static"
                                    data-keyboard="false"
