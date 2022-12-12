@@ -16,7 +16,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url_for('admin_manager')}}">Home</a></li>
-                        <li class="breadcrumb-item active">PRODUCT</li>
+                        <li class="breadcrumb-item active"><a href="{{url_for('admin_manager')}}">Store</a></li>
                     </ol>
                 </div>
             </div>
@@ -29,7 +29,7 @@
                     <!-- /.card -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">MANAGE PRODUCTS</h3>
+                            <h3 class="card-title">Manage Store</h3>
                             <div class="float-sm-right">
                                 <button class="btn btn-block bg-gradient-info"
                                         onclick="window.location.href='{{url_for('addproduct')}}'">New A Product
@@ -37,20 +37,20 @@
                             </div>
                         </div>
                         <div class="row justify-content-center">
-                            <div style=" margin-top: 20px; margin-bottom: -45px; ">{%include '_messages.html'%}</div>
+                            <div style=" margin-top: 20px; margin-bottom: -45px; ">
+                       <!--      {%include '_messages.html'%} -->
+                            </div>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
-                                    <th>Sr</th>
-                                    <th>Product</th>
-                                    <th>Price</th>
-                                    <th>Discount</th>
-                                    <th>Quantity</th>
-                                    <th>Category</th>
-                                    <th>Brand</th>
+                                    <th>ID</th>
+                                    <th>Store Name</th>
+                                    <th>Active</th>
+                                    <th>e_wallet</th>
+                                    <th>createdAt</th>
                                     <th>Image</th>
                                     <th></th>
                                     <th></th>
@@ -63,9 +63,7 @@
                                     <td>product.name</td>
                                     <td>product.price</td>
                                     <td>product.discount %</td>
-                                    <td>product.stock</td>
                                     <td>product.category_id</td>
-                                    <td>product.brand.name</td>
                                     <td><img src="{{url_for('static',filename='images/'+product.image_1)}}" width="50"
                                              height="40"></td>
                                     <td><a href="{{url_for('updateproduct',id=product.id)}}"
