@@ -6,5 +6,5 @@ import Model.Store;
 
 public interface IStoreServices {
 	List<Store> finALL();
-	
+	void Insert(Store store);
 }

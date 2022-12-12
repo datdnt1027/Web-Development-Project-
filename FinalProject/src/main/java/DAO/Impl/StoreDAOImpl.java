@@ -40,7 +40,28 @@ public class StoreDAOImpl extends Connection implements IStoreDAO {
 
 	@Override
 	public void Insert(Store store) {
-		// TODO Auto-generated method stub
+		String sql = "insert into Store (name,bio,slug,ownerId,isActive,avatar,commissionId,e_wallet) values (?,"
+				+ "?,?,?,?,?,?,?)";
+		try {
+			java.sql.Connection conn = super.getConnection(); 
+			PreparedStatement ps = conn.prepareStatement(sql);
+
+			ps.setString(1, store.getName());
+			ps.setString(2, store.getBio());
+			ps.setString(3, store.getSlug());
+			ps.setInt(4, store.getOwnerId());
+			ps.setBoolean(5, store.isActive());
+			ps.setString(6, store.getAvatar());
+			ps.setInt(7, store.getCommissionId());
+			ps.setFloat(8, store.getE_wallet());
+//			ps.setDate(9, store.getCreatedAt()); 
+//			ps.setDate(10, store.getUpdatedAt());
+
+			
+			ps.execute();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
 		
 	}
 
@@ -53,6 +74,10 @@ public class StoreDAOImpl extends Connection implements IStoreDAO {
 	@Override
 	public void EditCategory(Store store) {
 		// TODO Auto-generated method stub
+		
+	}
+	
+	public static void main(String[] args) {
 		
 	}
 	

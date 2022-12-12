@@ -15,7 +15,7 @@ import Services.IStoreServices;
 import Services.Impl.StoreServicesImpl;
 
 
-@WebServlet("/vendor/store")
+@WebServlet(urlPatterns = {"/vendor/store"})
 public class StoreController extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	IStoreServices storeServices = new StoreServicesImpl();

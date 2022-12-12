@@ -14,4 +14,8 @@ public class StoreServicesImpl extends Connection implements IStoreServices {
 	public List<Store> finALL() {
 		return storeDAO.finALL();
 	}
+	@Override
+	public void Insert(Store store) {
+		storeDAO.Insert(store);
+	}
 }
