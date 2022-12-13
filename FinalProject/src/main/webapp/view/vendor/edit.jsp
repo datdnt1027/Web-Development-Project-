@@ -42,7 +42,7 @@
 							<label>Commission ID :</label> 
 							<input type="text" name="conmissionId" class="form-control" value="${store.commissionId}" disabled/> 
 							<label>Shop Name :</label> 
-							<input type="text" name="name" id="name" class="form-control" onkeyup="ChangeToSlug();" value="${store.name}"/> 
+							<input type="text" name="name" id="name" class="form-control" value="${store.name}"/> 
 							<label>Bio :</label>
 							<input type="text" name="bio" class="form-control" value="${store.bio}"/> 
 							<label>Slug :</label> 

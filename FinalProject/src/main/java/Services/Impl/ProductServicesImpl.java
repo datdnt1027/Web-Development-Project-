@@ -13,5 +13,23 @@ public class ProductServicesImpl implements IProductServices {
 	public List<Product> findByStore(int idStore) {
 		return productDAO.findByStore(idStore);
 	}
+	@Override
+	public void Insert(Product product) {
+		 productDAO.Insert(product);
+		
+	}
+	@Override
+	public void Delete(int idProduct) {
+		productDAO.Delete(idProduct);
+		
+	}
+	@Override
+	public void Update(Product prduct) {
+		productDAO.Update(prduct);
+	}
+	@Override
+	public Product findById(int id) {
+		return productDAO.findById(id);
+	}
 
 }
