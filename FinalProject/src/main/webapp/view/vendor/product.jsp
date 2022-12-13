@@ -32,9 +32,8 @@
 						<div class="card-header">
 							<h3 class="card-title">Manage Product for Store: ${store.name} </h3>
 							<div class="float-sm-right">
-								<button class="btn btn-block bg-gradient-info"
-									onclick="window.location.href='{{url_for('addproduct')}}'">New
-									A Product</button>
+								<button class="btn btn-block bg-gradient-info">
+									<a class="link-secondary" href="<c:url value='/vendor/product/add'/> ">New A Store</a></button>
 							</div>
 						</div>
 						<div class="row justify-content-center">

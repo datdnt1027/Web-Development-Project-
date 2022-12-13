@@ -48,7 +48,6 @@ public class ProductDAOImpl extends Connection implements IProductDAO {
 		try {
 			java.sql.Connection conn = super.getConnection(); 
 			PreparedStatement ps = conn.prepareStatement(sql);
-
 			ps.setString(1, product.getName());
 			ps.setString(2, product.getSlug());
 			ps.setString(3, product.getDescription());

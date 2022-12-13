@@ -3,6 +3,7 @@ package Model;
 import java.sql.Date;
 import java.util.BitSet;
 
+
 public class Store {
 	   private int id;
 	   private String name;

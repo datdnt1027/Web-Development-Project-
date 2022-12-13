@@ -175,23 +175,23 @@
                             </p>
                         </a>
                     </li> -->
-                    <li class="nav-item">
-                        <a href="<c:url value='/vendor/store'/>" class="nav-link">
-                            <i class="nav-icon fas fa-store"></i>
-                            <p>
-                                Store
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="<c:url value='/vendor/store'/>" class="nav-link">
-                            <i class="nav-icon fas fa-circle"></i>
-                            <p>
-                                Order
-                            </p>
-                        </a>
-                    </li>
-                </ul>
+					<li class="nav-item"><a href="<c:url value='/vendor/store'/>"
+						class="nav-link"> <i class="nav-icon fas fa-store"></i>
+							<p>Store</p>
+					</a></li>
+					<li class="nav-item"><a href="<c:url value='/vendor/order?userId=1'/>"
+						class="nav-link"> <i class="nav-icon fas fa-circle"></i>
+							<p>Order</p>
+					</a></li>
+					<li class="nav-item"><a href="<c:url value='/vendor/store'/>"
+						class="nav-link"> <i class="nav-icon fab fa-amazon-pay"></i>
+							<p>Transaction</p>
+					</a></li>
+					<li class="nav-item"><a href="<c:url value='/vendor/store'/>"
+						class="nav-link"> <i class="nav-icon fas fa-caret-square-down"></i>
+							<p>turnover</p>
+					</a></li>
+				</ul>
             </nav>
             <!-- /.sidebar-menu -->
         </div>
