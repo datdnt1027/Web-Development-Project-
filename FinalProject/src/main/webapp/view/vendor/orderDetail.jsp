@@ -6,7 +6,7 @@
 		var e = document.getElementById("status");
 		document.getElementById("statusOrder").value = e.value;
 	}
-	function SetStatusRT() {
+	function getStatus() {
 		var e = document.getElementById("status");
 		return document.getElementById("statusOrder").value;
 	}
@@ -47,17 +47,17 @@
                         </div>
                         <div class="card-body">
 							Status Order: 
-							<input type="text" id="statusOrder" class="form-control" value="${order.status}"/> 
+							<form action="" role="form" method="POST" enctype="multipart/form-data">
+							<input type="text" name="orderId" id="orderId" class="form-control" value="${order.id}"/> 
+							<input type="text" name="statusOrder" id="statusOrder" class="form-control" value="${order.status}"/> 
 							<select id="status" class="form-control" onchange="SetStatus();">
 									<option value="wait_confirmation">wait_confirmation</option>
 									<option value="wait_goods">wait_goods</option>
 									<option value="delivering">delivering</option>
 									<option value="delivered">delivered</option>
 							</select> 
-
-							<button class="btn btn-success" ><a class="bg-light text-dark" 
-							href="<c:url value='/vendor/order/changeST?orderId=${order.id}&status=${order.status}'/>">Update</a></button>
-
+							<button class="btn btn-success" type=submit>Update</button>
+							</form>
 							<br />
 						</div>
                         <div class="card-body">
