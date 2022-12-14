@@ -5,18 +5,18 @@ import java.sql.Date;
 public class Trasaction {
 	  private int id ;
 	  private int  userId;
-	  private int StoreId;
+	  private int storeId;
 	  private boolean isUp;
-	  private float amount;
+	  private long amount;
 	  private Date createdAt;
 	  private Date updatedAt;
 	public Trasaction() {
-
 	}
-	public Trasaction(int id, int userId, int storeId, boolean isUp, float amount, Date createdAt, Date updatedAt) {
+	public Trasaction(int id, int userId, int storeId, boolean isUp, long amount, Date createdAt, Date updatedAt) {
+		super();
 		this.id = id;
 		this.userId = userId;
-		StoreId = storeId;
+		this.storeId = storeId;
 		this.isUp = isUp;
 		this.amount = amount;
 		this.createdAt = createdAt;
@@ -35,10 +35,10 @@ public class Trasaction {
 		this.userId = userId;
 	}
 	public int getStoreId() {
-		return StoreId;
+		return storeId;
 	}
 	public void setStoreId(int storeId) {
-		StoreId = storeId;
+		this.storeId = storeId;
 	}
 	public boolean isUp() {
 		return isUp;
@@ -46,10 +46,10 @@ public class Trasaction {
 	public void setUp(boolean isUp) {
 		this.isUp = isUp;
 	}
-	public float getAmount() {
+	public long getAmount() {
 		return amount;
 	}
-	public void setAmount(float amount) {
+	public void setAmount(long amount) {
 		this.amount = amount;
 	}
 	public Date getCreatedAt() {
@@ -66,9 +66,10 @@ public class Trasaction {
 	}
 	@Override
 	public String toString() {
-		return "Trasaction [id=" + id + ", userId=" + userId + ", StoreId=" + StoreId + ", isUp=" + isUp + ", amount="
+		return "Trasaction [id=" + id + ", userId=" + userId + ", storeId=" + storeId + ", isUp=" + isUp + ", amount="
 				+ amount + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
-	  
+
+	
 
 }

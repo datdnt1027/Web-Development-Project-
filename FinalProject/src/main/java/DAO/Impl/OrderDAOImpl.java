@@ -143,6 +143,6 @@ public class OrderDAOImpl extends Connection implements IOrderDAO {
 	
 	public static void main(String[] args) {
 		OrderDAOImpl d = new OrderDAOImpl();
-		d.Delivered(3, "delivered");
+		System.out.println(d.findByStore(1));
 	}
 }

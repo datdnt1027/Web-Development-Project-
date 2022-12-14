@@ -183,7 +183,7 @@
 						class="nav-link"> <i class="nav-icon fas fa-circle"></i>
 							<p>Order</p>
 					</a></li>
-					<li class="nav-item"><a href="<c:url value='/vendor/store'/>"
+					<li class="nav-item"><a href="<c:url value='/vendor/transaction?userId=1'/>"
 						class="nav-link"> <i class="nav-icon fab fa-amazon-pay"></i>
 							<p>Transaction</p>
 					</a></li>
