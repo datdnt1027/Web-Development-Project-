@@ -1,8 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp" %>
-<!-- Content Wrapper. Contains page content -->
-<div class="content-wrapper">
+   <script language="javascript">
+	function SetStatus() {
+		var e = document.getElementById("status");
+		document.getElementById("statusOrder").value = e.value;
+	}
+	function SetStatusRT() {
+		var e = document.getElementById("status");
+		return document.getElementById("statusOrder").value;
+	}
+</script>
+    
+ <div class="content-wrapper">
 
     <!-- Main content -->
     <section class="content">
@@ -14,7 +24,7 @@
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="{{url_for('admin_manager')}}">Home</a></li>
-                        <li class="breadcrumb-item active"><a href="{{url_for('admin_manager')}}">Order-Store</a></li>
+                        <li class="breadcrumb-item active"><a href="{{url_for('admin_manager')}}">Order Detail</a></li>
                     </ol>
                 </div>
             </div>
@@ -27,45 +37,49 @@
                     <!-- /.card -->
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Your Order List</h3>
+                            <h3 class="card-title">Order Detail</h3>
                             <div class="float-sm-right">
-                           <button class="btn btn-danger"><a class="bg-light text-dark" href="<c:url value='/vendor/order/manage?storeId=${storeId}&status=all'/>">all</a></button>
-                           <button class="btn btn-secondary"><a class="bg-light text-dark" href="<c:url value='/vendor/order/manage?storeId=${storeId}&status=wait_confirmation'/>">wait_confirmation</a></button>
-                           <button class="btn btn-primary""><a class="bg-light text-dark" href="<c:url value='/vendor/order/manage?storeId=${storeId}&status=wait_goods'/>">wait_goods</a></button>
-                           <button class="btn btn-success"><a class="bg-light text-dark" href="<c:url value='/vendor/order/manage?storeId=${storeId}&status=delivering'/>">delivering</a></button>
-                           <button class="btn btn-warning"> <a class="bg-light text-dark" href="<c:url value='/vendor/order/manage?storeId=${storeId}&status=delivered'/>">delivered</a></button>
-                        
-                            
-                            
-                           
                             </div>
                         </div>
                         <div class="row justify-content-center">
                             <div style=" margin-top: 20px; margin-bottom: -45px; ">
-                       <!--      {%include '_messages.html'%} -->
                             </div>
                         </div>
-                        <!-- /.card-header -->
                         <div class="card-body">
+							Status Order: 
+							<input type="text" id="statusOrder" class="form-control" value="${order.status}"/> 
+							<select id="status" class="form-control" onchange="SetStatus();">
+									<option value="wait_confirmation">wait_confirmation</option>
+									<option value="wait_goods">wait_goods</option>
+									<option value="delivering">delivering</option>
+									<option value="delivered">delivered</option>
+							</select> 
+
+							<button class="btn btn-success" ><a class="bg-light text-dark" 
+							href="<c:url value='/vendor/order/changeST?orderId=${order.id}&status=${order.status}'/>">Update</a></button>
+
+							<br />
+						</div>
+                        <div class="card-body">
+                        
                             <table id="example1" class="table table-bordered table-striped">
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>UserId</th>
-                                    <th>Address</th>
-                                    <th>Phone</th>
-                                    <th>Detail</th>
+                                    <th>Product</th>
+                                    <th>Order ID</th>
+                                    <th>Count</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-            					<c:forEach items="${orders}" var="order">
+            					<c:forEach items="${orderItems}" var="orderItem">
             					
             					 <tr>
-                                    <td>${order.id}</td>
-                                     <td>${order.userId}</td>
-                                     <td>${order.address}</td>
-                                      <td>${order.phone}</td>
-                                       <td><a href="<c:url value='/vendor/order/orderDetail?orderId=${order.id}	'/>" class="">view detail</a></td>
+                                    <td>${orderItem.id}</td>
+                                    <td>${orderItem.product.name}</td>
+                                    <td>${orderItem.orderId}</td>
+                                    <td>${orderItem.count}</td>
+
                                 </tr>
             					
             					</c:forEach>
@@ -84,3 +98,4 @@
     </section>
     <!-- /.content -->
 </div>
+  

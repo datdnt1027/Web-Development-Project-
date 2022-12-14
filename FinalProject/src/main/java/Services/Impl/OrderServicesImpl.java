@@ -18,4 +18,14 @@ public class OrderServicesImpl implements IOrderServices{
 		// TODO Auto-generated method stub
 		return orderDAO.findByStoreWithStatus(idStore, status);
 	}
+	@Override
+	public Order findById(int orderId) {
+		// TODO Auto-generated method stub
+		return orderDAO.findById(orderId);
+	}
+	@Override
+	public void changOrderStatus(int orderId, String status) {
+		orderDAO.ChangeStatus(orderId, status);
+		
+	}
 }
