@@ -63,6 +63,7 @@ public class OrderDetailController extends HttpServlet {
 				}
 			}
 			orderServices.changOrderStatus(orderId, status);
+			orderServices.Delivered(orderId, status);
 			response.sendRedirect(request.getContextPath() + "/vendor/home");
 		} catch (FileUploadException e) {
 			e.printStackTrace();

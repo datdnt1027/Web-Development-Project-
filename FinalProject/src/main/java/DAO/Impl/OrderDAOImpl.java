@@ -126,4 +126,23 @@ public class OrderDAOImpl extends Connection implements IOrderDAO {
 			e.printStackTrace();
 		}
 	}
+	
+	@Override
+	public void Delivered(int orderId, String status) {
+		String sql = "execute sp_delivered ?, ?";
+		try {
+			java.sql.Connection conn = super.getConnection(); 
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, orderId);
+			ps.setString(2, status);
+			ps.executeUpdate();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
+	public static void main(String[] args) {
+		OrderDAOImpl d = new OrderDAOImpl();
+		d.Delivered(3, "delivered");
+	}
 }

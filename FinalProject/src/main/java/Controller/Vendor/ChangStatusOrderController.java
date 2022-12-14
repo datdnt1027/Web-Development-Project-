@@ -22,7 +22,9 @@ public class ChangStatusOrderController extends HttpServlet {
 		String orderId= req.getParameter("orderId");
 		String status = req.getParameter("status");
 		orderServices.changOrderStatus(Integer.parseInt(orderId), status);
+		orderServices.Delivered(Integer.parseInt(orderId), status.toString());
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/vendor/changedStatus.jsp");
 		dispatcher.forward(req, resp);
 	}
 }
+/// khong hoat dong, khong dung

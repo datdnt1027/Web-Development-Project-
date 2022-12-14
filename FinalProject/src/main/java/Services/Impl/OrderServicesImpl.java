@@ -28,4 +28,9 @@ public class OrderServicesImpl implements IOrderServices{
 		orderDAO.ChangeStatus(orderId, status);
 		
 	}
+	@Override
+	public void Delivered(int orderId, String status) {
+		orderDAO.Delivered(orderId, status);
+		
+	}
 }
