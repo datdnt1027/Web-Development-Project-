@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 @SuppressWarnings("serial")
-@WebServlet("/vendor/home")
+@WebServlet(urlPatterns = {"/vendor/home"})
 public class HomeController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	@Override

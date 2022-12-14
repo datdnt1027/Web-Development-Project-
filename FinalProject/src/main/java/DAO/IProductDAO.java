@@ -1,5 +1,13 @@
 package DAO;
 
-public interface IProductDAO {
+import java.util.List;
 
+import Model.Product;
+
+public interface IProductDAO {
+	List<Product> findByStore(int idStore);
+	void Insert(Product product);
+	void Delete(int idProduct);
+	void Update(Product prduct);
+	Product findById(int id);
 }
