@@ -74,7 +74,7 @@ public class AddStoreController extends HttpServlet {
 				store.setActive(true);
 			}
 			storeServices.Insert(store);
-			response.sendRedirect(request.getContextPath() + "/vendor/store");
+			response.sendRedirect(request.getContextPath() + "/vendor/store?userId="+store.getOwnerId());
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

@@ -71,7 +71,7 @@ public class AddTransactionController extends HttpServlet {
 				} 
 			}
 			transactionServices.CreateTransaction(transaction);
-			response.sendRedirect(request.getContextPath() + "/vendor/home");
+			response.sendRedirect(request.getContextPath() + "/vendor/transaction?userId="+transaction.getUserId());
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {
