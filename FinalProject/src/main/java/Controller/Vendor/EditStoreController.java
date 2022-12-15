@@ -10,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -17,6 +18,7 @@ import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import Model.Store;
+import Model.User;
 import Services.IStoreServices;
 import Services.Impl.StoreServicesImpl;
 import Utils.Constant;
@@ -83,7 +85,9 @@ public class EditStoreController extends HttpServlet{
 				store.setActive(true);
 			}
 			storeServices.Edit(store);
-			response.sendRedirect(request.getContextPath() + "/vendor/store");
+			HttpSession session = request.getSession();
+			User u = (User) session.getAttribute("account");
+			response.sendRedirect(request.getContextPath() + "/vendor/store?userId="+u.getId());
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

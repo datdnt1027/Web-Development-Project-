@@ -7,7 +7,9 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
+import Model.User;
 import Services.IProductServices;
 import Services.Impl.ProductServicesImpl;
 
@@ -20,7 +22,9 @@ public class DeleteProductController extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
     	String id = req.getParameter("id");
     	productServices.Delete(Integer.parseInt(id));
-    	resp.sendRedirect(req.getContextPath() + "/vendor/product?storeId=1");
+		HttpSession session = req.getSession();
+		User u = (User) session.getAttribute("account");
+    	resp.sendRedirect(req.getContextPath() + "/vendor/product?storeId="+u.getId());
 	}
 	
 }
