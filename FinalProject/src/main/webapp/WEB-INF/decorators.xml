@@ -12,6 +12,11 @@
         <decorator name="vendor" page="vendor.jsp">
         <pattern>/vendor*</pattern>
     </decorator>
+    
+<!--      <decorator name="vendor" page="vendorLogin.jsp">
+        <pattern>/vendor/login</pattern>
+    </decorator> -->
+    
      <decorator name="login" page="login.jsp">
         <pattern>/login*</pattern>
     </decorator>

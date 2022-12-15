@@ -33,6 +33,28 @@ public class UserDAOImpl extends Connection implements IUserDAO {
 		e.printStackTrace();}
 		return null;
 	}
-	
 
+	@Override
+	public User findByUserName(String username) {
+		String sql = "SELECT * FROM _User WHERE slug = ? ";
+		try {
+		java.sql.Connection conn = super.getConnection();
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setString(1, username);
+		ResultSet  rs = ps.executeQuery();
+		while (rs.next()) {
+		User user = new User();
+		user.setId(rs.getInt("id"));
+		user.setId_role(rs.getInt("id_role"));
+		user.setSlug(rs.getString("slug"));
+		user.setId_card(rs.getString("id_card"));
+		user.setFullName(rs.getString("full_name"));
+		user.setPassword(rs.getString("password"));
+		user.setAvatar(rs.getString("avatar"));
+		user.setPhone(rs.getString("phone"));
+		user.setCreatedAt(rs.getDate("createdAt"));
+		return user;}
+		} catch (Exception e) {e.printStackTrace();}
+		return null;
+	}
 }

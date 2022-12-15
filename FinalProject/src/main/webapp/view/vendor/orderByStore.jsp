@@ -51,7 +51,7 @@
                                 <thead>
                                 <tr>
                                     <th>ID</th>
-                                    <th>UserId</th>
+                                    <th>CustomerID</th>
                                     <th>Address</th>
                                     <th>Phone</th>
                                     <th>Detail</th>
