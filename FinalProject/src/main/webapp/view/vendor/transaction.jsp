@@ -31,7 +31,7 @@
                             <h3 class="card-title">History</h3>
                             <div class="float-sm-right">
                                 <button class="btn btn-block bg-gradient-info">
-                                <a class="link-secondary" href="<c:url value='/vendor/transaction/add'/> ">New A Trans</a>
+                                <a class="link-secondary" href="<c:url value='/vendor/transaction/add?userId=${userId}'/> ">New A Trans</a>
                                 </button>
                             </div>
                         </div>

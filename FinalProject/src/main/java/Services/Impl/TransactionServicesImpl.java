@@ -18,4 +18,9 @@ public class TransactionServicesImpl implements ITransactionServices {
 		// TODO Auto-generated method stub
 		return transactionDAO.findByUserId(userId);
 	}
+	@Override
+	public void CreateTransaction(Trasaction transaction) {
+		transactionDAO.CreateTransaction(transaction);
+		
+	}
 }

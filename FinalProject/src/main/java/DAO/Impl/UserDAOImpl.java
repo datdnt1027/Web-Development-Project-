@@ -21,7 +21,7 @@ public class UserDAOImpl extends Connection implements IUserDAO {
 		User user = new User();
 		user.setId(rs.getInt("id"));
 		user.setId_role(rs.getInt("id_role"));
-		user.setFull_name(rs.getString("full_name"));
+		user.setFullName(rs.getString("full_name"));
 		user.setSlug(rs.getString("slug"));
 		user.setId_card(rs.getString("id_card"));
 		user.setPhone(rs.getString("phone"));

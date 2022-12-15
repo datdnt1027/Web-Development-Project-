@@ -58,6 +58,23 @@ public class TransactionDAOImpl extends Connection implements ITransactionDAO {
 		return transactions;
 	}
 	
+	@Override
+	public void CreateTransaction(Trasaction transaction) {
+		String sql="insert into _Transaction(userId,StoreId,isUp,amount) values (?,?,?,?)";
+		try {
+			java.sql.Connection conn = super.getConnection(); 
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, transaction.getUserId());
+			ps.setInt(2, transaction.getStoreId());
+			ps.setBoolean(3, transaction.isUp());
+			ps.setFloat(4, transaction.getAmount());
+			ps.execute();
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public static void main(String[] args) {
 		TransactionDAOImpl d = new TransactionDAOImpl();
 		List<Trasaction> transactions = new ArrayList<Trasaction>();
@@ -68,5 +85,7 @@ public class TransactionDAOImpl extends Connection implements ITransactionDAO {
 		System.out.println(d.findAll());
 
 	}
+
+
 
 }

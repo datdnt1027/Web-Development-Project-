@@ -24,7 +24,7 @@ public class TransactionController extends HttpServlet {
 		RequestDispatcher rq = req.getRequestDispatcher("/view/vendor/transaction.jsp");
 		List<Trasaction> transactions = transactionServices.findByUserId(Integer.parseInt(userId));
 		req.setAttribute("transactions", transactions);
+		req.setAttribute("userId", userId);
 		rq.forward(req, resp);
 	}
-
 }

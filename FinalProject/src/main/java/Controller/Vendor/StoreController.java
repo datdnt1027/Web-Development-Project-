@@ -21,8 +21,9 @@ public class StoreController extends HttpServlet{
 	IStoreServices storeServices = new StoreServicesImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		String userId= req.getParameter("userId");
 		RequestDispatcher rq = req.getRequestDispatcher("/view/vendor/store.jsp");
-		List<Store> stores = storeServices.finALL();
+		List<Store> stores = storeServices.findByUser(Integer.parseInt(userId));
 		req.setAttribute("stores", stores);
 		rq.forward(req, resp);
 	}
@@ -31,5 +32,4 @@ public class StoreController extends HttpServlet{
 		IStoreServices storeServices = new StoreServicesImpl();
 		System.out.println(storeServices.finALL().toString());
 	}
-
 }
