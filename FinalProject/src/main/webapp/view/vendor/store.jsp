@@ -30,7 +30,7 @@
                             <h3 class="card-title">Manage Store</h3>
                             <div class="float-sm-right">
                                 <button class="btn btn-block bg-gradient-info"
-                                        onclick="/vendor/store/add"><a class="link-secondary" href="<c:url value='/vendor/store/add'/> ">New A Store</a>
+                                        onclick="/vendor/store/add"><a class="link-secondary" href="<c:url value='/vendor/store/add?userId=${sessionScope.account.id}'/> ">New A Store</a>
                                 </button>
                             </div>
                         </div>

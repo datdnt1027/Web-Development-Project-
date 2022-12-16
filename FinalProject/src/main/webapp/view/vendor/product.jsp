@@ -33,7 +33,7 @@
 							<h3 class="card-title">Manage Product for Store: ${store.name} </h3>
 							<div class="float-sm-right">
 								<button class="btn btn-block bg-gradient-info">
-									<a class="link-secondary" href="<c:url value='/vendor/product/add'/> ">New A Product</a></button>
+									<a class="link-secondary" href="<c:url value='/vendor/product/add?storeId=${store.id}'/> ">New A Product</a></button>
 							</div>
 						</div>
 						<div class="row justify-content-center">

@@ -62,7 +62,7 @@
 
 						<form id="demo-form" role="form" action="add" method="POST"  enctype="multipart/form-data">
 							<label>Your Store Id :</label> 
-							<input type="number" name="storeId" class="form-control" /> 
+							<input type="number" name="storeId" class="form-control" value="${storeId}" /> 
 						
 							<label>Product name :</label> 
 							<input type="text" name="name" id="name" class="form-control" onkeyup="ChangeToSlug();" /> 
@@ -89,7 +89,7 @@
 							<input type="number" name="quantity" class="form-control" /> 
 							
 							<label>Images :</label>
-							<input class="form-control" type="file" name="images"/>
+							<input class="form-control" type="file" name="image"/>
 
 							<button type="submit" class="btn btn-primary">ADD</button>
 						</form>

@@ -30,6 +30,8 @@ public class AddStoreController extends HttpServlet {
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/vendor/addStore.jsp");
+		String userID = req.getParameter("userId");
+		req.setAttribute("userId", userID);
 		dispatcher.forward(req, resp);
 	}
 	@Override

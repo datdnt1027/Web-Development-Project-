@@ -37,6 +37,8 @@ public class AddProductController extends HttpServlet {
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		List<Category> categorys = new ArrayList<Category>();
 		categorys = categoryDAO.findAll();
+		String storeId= req.getParameter("storeId");
+		req.setAttribute("storeId", storeId);
 		req.setAttribute("categorys", categorys);
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/vendor/addProduct.jsp");
 		dispatcher.forward(req, resp);

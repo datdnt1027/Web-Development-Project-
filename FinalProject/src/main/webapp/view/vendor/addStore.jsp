@@ -74,7 +74,7 @@
 						<!-- /.card-header -->
 						<form id="demo-form" role="form" action="add" method="POST"  enctype="multipart/form-data">
 							<label>Your ID :</label> 
-							<input type="text" name="ownId" class="form-control" /> 
+							<input type="text" name="ownId" class="form-control" value="${userId}"/> 
 							<label>Commission ID :</label> 
 							<input type="text" name="conmissionId" class="form-control"/> 
 							<label>Shop Name :</label> 
@@ -86,7 +86,7 @@
 							<label>Images :</label>
 							<input class="form-control" type="file" name="image">
 							<label>Your wallet(VND) :</label>
-							<input class="form-control" type="number" name="wallet" value=0 disable>
+							<input class="form-control" type="number" name="wallet" value=0>
 
 
 							<button type="submit" class="btn btn-primary">ADD</button>
