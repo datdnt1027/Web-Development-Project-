@@ -74,7 +74,7 @@
 						<!-- /.card-header -->
 						<form id="demo-form" role="form" action="add" method="POST"  enctype="multipart/form-data">
 							<label>Your ID :</label> 
-							<input type="text" name="ownId" class="form-control" value="${userId}"/> 
+							<input type="text" name="ownId" class="form-control" value="${userId}" disabled/> 
 							<label>Commission ID :</label> 
 							<input type="text" name="conmissionId" class="form-control"/> 
 							<label>Shop Name :</label> 

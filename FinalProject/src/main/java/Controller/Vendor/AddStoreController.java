@@ -26,11 +26,13 @@ import Utils.Constant;
 @WebServlet(urlPatterns = { "/vendor/store/add" })
 public class AddStoreController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+	Integer userID_luu=0;
 	IStoreServices storeServices = new StoreServicesImpl();
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		RequestDispatcher dispatcher = req.getRequestDispatcher("/view/vendor/addStore.jsp");
 		String userID = req.getParameter("userId");
+		userID_luu=Integer.parseInt(userID);
 		req.setAttribute("userId", userID);
 		dispatcher.forward(req, resp);
 	}
@@ -75,6 +77,7 @@ public class AddStoreController extends HttpServlet {
 				}
 				store.setActive(true);
 			}
+			store.setOwnerId(userID_luu);
 			storeServices.Insert(store);
 			response.sendRedirect(request.getContextPath() + "/vendor/store?userId="+store.getOwnerId());
 		} catch (FileUploadException e) {
