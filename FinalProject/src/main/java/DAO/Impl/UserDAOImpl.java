@@ -28,6 +28,7 @@ public class UserDAOImpl extends Connection implements IUserDAO {
 		user.setPassword(rs.getString("password"));
 		user.setAvatar(rs.getString("avatar"));
 		user.setActive(rs.getBoolean("isActive"));
+		user.setCreatedAt(rs.getDate("createdAt"));
 		return user;
 		}} catch (Exception e) {
 		e.printStackTrace();}

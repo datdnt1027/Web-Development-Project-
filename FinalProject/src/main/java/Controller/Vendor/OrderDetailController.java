@@ -64,7 +64,8 @@ public class OrderDetailController extends HttpServlet {
 			}
 			orderServices.changOrderStatus(orderId, status);
 			orderServices.Delivered(orderId, status);
-			response.sendRedirect(request.getContextPath() + "/vendor/home");
+			
+			response.sendRedirect(request.getContextPath() + "/dangnhap");
 		} catch (FileUploadException e) {
 			e.printStackTrace();
 		} catch (Exception e) {

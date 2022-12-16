@@ -24,7 +24,7 @@ public class WaitingVendorController extends HttpServlet{
 				resp.sendRedirect(req.getContextPath() + "/vendor/home?userId="+u.getId());
 			}
 		} else {
-			resp.sendRedirect(req.getContextPath() + "/vendor/login");
+			resp.sendRedirect(req.getContextPath() + "/dangnhap");
 		}
 	}
 	

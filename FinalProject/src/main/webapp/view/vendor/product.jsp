@@ -64,7 +64,7 @@
 										<td>${product.sold}</td>
 										<td>${product.categoryId}</td>
 										<td><img src="${pageContext.request.contextPath}/assets/images/product/${product.images}" width="50" height="40"></td>
-                                   	 	<td><a href="<c:url value='/vendor/product/edit?StoreId=${product.id}'/>" class="btn btn-info ">Edit</a></td>
+                                   	 	<td><a href="<c:url value='/vendor/product/edit?productId=${product.id}'/>" class="btn btn-info ">Edit</a></td>
                                     	<td><a href="<c:url value='/vendor/product/delete?id=${product.id}'/>" class="btn btn-danger ">Delete</a></td>
 										</td>
 									

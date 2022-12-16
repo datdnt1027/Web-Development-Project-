@@ -17,7 +17,7 @@
       
       
       
-        <form action="login" method="POST">
+        <form action="dangnhap" method="POST">
  
           <div class="form-outline mb-4">
             <input type="text" name="username" id="form1Example13" class="form-control form-control-lg" />

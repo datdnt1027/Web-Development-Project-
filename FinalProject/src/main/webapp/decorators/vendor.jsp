@@ -12,7 +12,7 @@
     <title>Vendor</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="${template}admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -54,6 +54,8 @@
 <script src="${template}admin/js/adminlte.min.js "></script>
 <!-- AdminLTE for demo purposes -->
 <script src="${template}admin/js/demo.js "></script>
+
+
 <script>
       $(function () {
         $("#example1").DataTable({

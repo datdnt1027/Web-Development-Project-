@@ -26,5 +26,4 @@ public class DeleteProductController extends HttpServlet{
 		User u = (User) session.getAttribute("account");
     	resp.sendRedirect(req.getContextPath() + "/vendor/product?storeId="+u.getId());
 	}
-	
 }

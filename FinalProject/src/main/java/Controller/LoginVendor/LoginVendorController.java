@@ -15,7 +15,7 @@ import Services.LoginVendorServices;
 import Services.Impl.LoginVendorServicesImpl;
 
 @SuppressWarnings("serial")
-@WebServlet(urlPatterns = "/vendor/login")
+@WebServlet(urlPatterns = "/dangnhap")
 public class LoginVendorController extends HttpServlet {	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {

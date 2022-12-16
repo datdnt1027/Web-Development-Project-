@@ -40,7 +40,7 @@ public class EditProductController extends HttpServlet {
 	ICategoryServices categoryServices = new CategorySevies();
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String id = request.getParameter("StoreId");
+		String id = request.getParameter("productId");
 		Product product = productServices.findById(Integer.parseInt(id));
 		id_store = product.getStoreId();
 		List<Category> categorys = new ArrayList<Category>();

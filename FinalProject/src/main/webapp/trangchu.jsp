@@ -3,4 +3,4 @@
 
 <%@include file="/common/taglib.jsp"%>
 
-<c:redirect url="/vendor/login"></c:redirect>
+<c:redirect url="/dangnhap"></c:redirect>
