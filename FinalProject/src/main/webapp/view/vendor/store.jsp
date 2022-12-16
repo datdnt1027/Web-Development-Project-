@@ -65,9 +65,7 @@
                                     <td><a href="<c:url value='/vendor/store/edit?StoreId=${store.id}'/>" class="btn btn-info ">Edit</a></td>
                                     <td><a href="<c:url value='/vendor/store/delete?StoreId=${store.id}'/>" class="btn btn-danger ">Delete</a></td>
                                 </tr>
-            					
             					</c:forEach>
-                               
                                 <!-- Modal -->
                                 <div class="modal fade" id="staticBackdrop-{{product.id}}" data-backdrop="static"
                                    data-keyboard="false"

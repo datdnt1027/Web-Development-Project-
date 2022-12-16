@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ include file="/common/taglib.jsp" %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.min.js"></script>
  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
@@ -22,18 +24,19 @@
         datasets:[{
           label:'Income',
           data:[
-            617594,
-            181045,
-            153060,
-            106519,
-            105162,
-            95072,
-            12213,
-            123123,
-            12413,
-            123123,
-            12312,
-            123121,
+ 				${monthInmome.january},
+ 				${monthInmome.february},
+ 				${monthInmome.march},
+ 				${monthInmome.april},
+ 				${monthInmome.may},
+ 				${monthInmome.june},
+ 				${monthInmome.july},
+ 				${monthInmome.august},
+ 				${monthInmome.september},
+ 				${monthInmome.october},
+ 				${monthInmome.november},
+ 				${monthInmome.december},
+ 				
           ],
           //backgroundColor:'green',
           backgroundColor:[
@@ -81,27 +84,29 @@
     </nav>
 
     <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
-      <h2>Section title</h2>
+      <h2>TABLE</h2>
       <div class="table-responsive">
         <table class="table table-striped table-sm">
           <thead>
             <tr>
-              <th scope="col">#</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
-              <th scope="col">Header</th>
+           	 <th scope="col">StoreID</th>
+              <th scope="col">OrderID</th>
+              <th scope="col">CustomerID</th>
+              <th scope="col">Income</th>
+              <th scope="col">CompleteDate</th>
             </tr>
           </thead>
           <tbody>
+          <c:forEach items="${incomes}" var="income">
             <tr>
-              <td>1,001</td>
-              <td>random</td>
-              <td>data</td>
-              <td>placeholder</td>
-              <td>text</td>
+            	<td>${income.storeId}</td>
+              	<td>${income.orderId}</td>
+              	<td>${income.orderUserId}</td>
+           		<td>${income.income}</td>
+             	<td>${income.dateComplete}</td>
             </tr>
-
+          
+          </c:forEach>
           </tbody>
         </table>
       </div>

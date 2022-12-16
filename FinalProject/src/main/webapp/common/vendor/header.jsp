@@ -189,7 +189,7 @@
 						class="nav-link"> <i class="nav-icon fab fa-amazon-pay"></i>
 							<p>Transaction</p>
 					</a></li>
-					<li class="nav-item"><a href="${pageContext.request.contextPath }/vendor/report"
+					<li class="nav-item"><a href="${pageContext.request.contextPath }/vendor/report?userId=${sessionScope.account.id}"
 						class="nav-link"> <i class="nav-icon fas fa-caret-square-down"></i>
 							<p>Report</p>
 					</a></li>
