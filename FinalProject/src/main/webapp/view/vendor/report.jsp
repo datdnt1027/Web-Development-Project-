@@ -12,13 +12,13 @@
 
 <script>
     let myChart = document.getElementById('myChart').getContext('2d');
-    // Global Options
+
     Chart.defaults.global.defaultFontFamily = 'Lato';
     Chart.defaults.global.defaultFontSize = 18;
     Chart.defaults.global.defaultFontColor = '#777';
 
     let massPopChart = new Chart(myChart, {
-      type:'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+      type:'bar', 
       data:{
         labels:['January', 'February', 'March', 'April', 'May', 'June','July','August','September','October','November','December'],
         datasets:[{
@@ -38,9 +38,9 @@
  				${monthInmome.december},
  				
           ],
-          //backgroundColor:'green',
-          backgroundColor:[
 
+          backgroundColor:[
+			
           ],
           borderWidth:1,
           borderColor:'#777',
