@@ -1,6 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="/common/taglib.jsp" %>
+
+
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script
+	src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
+	
+	
    <script language="javascript">
 	function SetStatus() {
 		var e = document.getElementById("status");
@@ -61,17 +76,18 @@
 							<br />
 						</div>
                         <div class="card-body">
-                        
-                            <table id="example1" class="table table-bordered table-striped">
-                                <thead>
+                            <table id="example" class="table table-striped"
+								style="width: 100%">
+								<thead>
                                 <tr>
                                     <th>ID</th>
                                     <th>Product</th>
                                     <th>Order ID</th>
                                     <th>Count</th>
                                 </tr>
-                                </thead>
-                                <tbody>
+								</thead>
+								<tbody>
+
             					<c:forEach items="${orderItems}" var="orderItem">
             					
             					 <tr>
@@ -83,10 +99,21 @@
                                 </tr>
             					
             					</c:forEach>
-                               
-       
-                                </tbody>
-                            </table>
+								</tbody>
+								<tfoot>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Product</th>
+                                    <th>Order ID</th>
+                                    <th>Count</th>
+                                </tr>
+								</tfoot>
+							</table>
+							<script>
+								$(document).ready(function() {
+									$('#example').DataTable();
+								});
+							</script>
                         </div>
                         <!-- /.card-body -->
                     </div>

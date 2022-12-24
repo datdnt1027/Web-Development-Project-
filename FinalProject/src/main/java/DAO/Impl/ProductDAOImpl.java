@@ -12,6 +12,36 @@ import Model.Store;
 
 public class ProductDAOImpl extends Connection implements IProductDAO {
 
+
+
+	@Override
+	public List<Product> FindAllPage(int index) {
+		List<Product> products = new ArrayList<Product>();
+		String sql = "select * from Product ORDER BY Product.id OFFSET 2 rows fetch next 2 rows only";
+		try {
+			java.sql.Connection conn = super.getConnection();
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				Product product = new Product();
+				product.setId(rs.getInt("id"));
+				product.setName(rs.getString("name"));
+				product.setSlug(rs.getString("slug"));
+				product.setDescription(rs.getString("description"));
+				product.setPrice(rs.getInt("price"));
+				product.setQuantity(rs.getInt("quantity"));
+				product.setSold(rs.getInt("sold"));
+				product.setActive(rs.getBoolean("isActive"));
+				product.setImages(rs.getString("images"));
+				product.setCategoryId(rs.getInt("categoryId"));
+				product.setStoreId(rs.getInt("storeId"));
+				products.add(product);
+			}} catch (Exception e) {
+				e.printStackTrace();}
+		return products;
+	}
+	
+	
 	@Override
 	public List<Product> findByStore(int idStore) {
 		List<Product> products = new ArrayList<Product>();
@@ -126,5 +156,7 @@ public class ProductDAOImpl extends Connection implements IProductDAO {
 		ProductDAOImpl d = new ProductDAOImpl();
 		System.out.println(d.findById(3));
 	}
+
+
 
 }

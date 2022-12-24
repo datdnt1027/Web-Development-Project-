@@ -1,6 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 	<%@ include file="/common/taglib.jsp" %>
+	
+	
+	
+	<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://cdn.datatables.net/1.13.1/css/dataTables.bootstrap5.min.css">
+
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script
+	src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+<script
+	src="https://cdn.datatables.net/1.13.1/js/dataTables.bootstrap5.min.js"></script>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
 
@@ -40,70 +53,64 @@
 	
 						<!-- /.card-header -->
 						<div class="card-body">
-							<table id="example1" class="table table-bordered table-striped">
-								<thead>
-									<tr>
-										<th>Id</th>
-										<th>Name</th>
-										<th>Price</th>
-										<th>Quantity</th>
-										<th>Sold</th>
-										<th>CategoryId</th>
-										<th>Images</th>
-										<th></th>
-										<th></th>
-									</tr>
-								</thead>
-								<tbody>
-								<c:forEach items="${products}" var="product">
-									<tr>
-										<td>${product.id}</td>
-										<td>${product.name}</td>
-										<td>${product.price}</td>
-										<td>${product.quantity}</td>
-										<td>${product.sold}</td>
-										<td>${product.categoryId}</td>
-										<td><img src="${pageContext.request.contextPath}/assets/images/product/${product.images}" width="50" height="40"></td>
-                                   	 	<td><a href="<c:url value='/vendor/product/edit?productId=${product.id}'/>" class="btn btn-info ">Edit</a></td>
-                                    	<td><a href="<c:url value='/vendor/product/delete?id=${product.id}'/>" class="btn btn-danger ">Delete</a></td>
-										</td>
-									
-									</tr>
-								</c:forEach>
-									
-									<!-- Modal -->
-									<div class="modal fade" id="staticBackdrop-{{product.id}}"
-										data-backdrop="static" data-keyboard="false" tabindex="-1"
-										aria-labelledby="staticBackdropLabel" aria-hidden="true">
-										<div class="modal-dialog">
-											<div class="modal-content">
-												<div class="modal-header">
-													<h5 class="modal-title" id="staticBackdropLabel">product.name</h5>
-													<button type="button" class="close" data-dismiss="modal"
-														aria-label="Close">
-														<span aria-hidden="true">&times;</span>
-													</button>
-												</div>
-												<div class="modal-body">
-													<span class="text-danger">are you sure delete the
-														product product.name</span>
-												</div>
-												<div class="modal-footer">
-													<button type="button"
-														class="btn btn-warning  btn-secondary"
-														data-dismiss="modal">Cancel</button>
-													<form action="{{url_for('deleteproduct', id=product.id)}}"
-														method="POST">
-														<button type="submit" class="btn btn-danger">Delete</button>
-													</form>
+									<table id="example" class="table table-striped"
+										style="width: 100%">
+										<thead>
+											<tr>
+												<th>Id</th>
+												<th>Name</th>
+												<th>Price</th>
+												<th>Quantity</th>
+												<th>Sold</th>
+												<th>CategoryId</th>
+												<th>Images</th>
+												<th></th>
+												<th></th>
+											</tr>
+										</thead>
+										<tbody>
 
-												</div>
-											</div>
-										</div>
-									</div>
+											<c:forEach items="${products}" var="product">
+												<tr>
+													<td>${product.id}</td>
+													<td>${product.name}</td>
+													<td>${product.price}</td>
+													<td>${product.quantity}</td>
+													<td>${product.sold}</td>
+													<td>${product.categoryId}</td>
+													<td><img
+														src="${pageContext.request.contextPath}/assets/images/product/${product.images}"
+														width="50" height="40"></td>
+													<td><a
+														href="<c:url value='/vendor/product/edit?productId=${product.id}'/>"
+														class="btn btn-info ">Edit</a></td>
+													<td><a
+														href="<c:url value='/vendor/product/delete?id=${product.id}'/>"
+														class="btn btn-danger ">Delete</a></td>
+													</td>
 
-								</tbody>
-							</table>
+												</tr>
+											</c:forEach>
+										</tbody>
+										<tfoot>
+											<tr>
+												<th>Id</th>
+												<th>Name</th>
+												<th>Price</th>
+												<th>Quantity</th>
+												<th>Sold</th>
+												<th>CategoryId</th>
+												<th>Images</th>
+												<th></th>
+												<th></th>
+											</tr>
+										</tfoot>
+									</table>
+									<script>
+										$(document).ready(function() {
+											$('#example').DataTable();
+										});
+									</script>
 						</div>
 						<!-- /.card-body -->
 					</div>
