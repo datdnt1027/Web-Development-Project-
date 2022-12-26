@@ -112,7 +112,7 @@
 	                            <a href="${pageContext.request.contextPath }/register" class="nav-item nav-link">Đăng kí</a>
                             </c:when>
 							<c:otherwise>
-	                            <a href="${pageContext.request.contextPath }/user/myaccount" class="nav-item nav-link">Chào, ${sessionScope.account.fullName}</a>
+	                            <a href="${pageContext.request.contextPath }/user/myaccount" class="nav-item nav-link">Chào, ${sessionScope.account.full_name}</a>
 	                            <a href="${pageContext.request.contextPath }/logout" class="nav-item nav-link">Đăng xuất</a>
 							</c:otherwise>
 							</c:choose>	
