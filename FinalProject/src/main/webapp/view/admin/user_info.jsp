@@ -9,11 +9,15 @@
 		<!-- Modal content-->
 
 		<form method="post" role="form"
-			action="${pageContext.request.contextPath}/admin/user_management?action=update"
+			action="${pageContext.request.contextPath}/admin/info?action=update"
 			enctype="multipart/form-data">
 			<div class="modal-header">
-				<h4 class="modal-title">Sửa thông tin User</h4>
-				<button type="button" class="close" data-dismiss="modal">&times;</button>
+				<h4 class="modal-title">Sửa thông tin</h4>
+			</div>
+			<div class="col-lg-6 mb-4 mb-lg-0">
+				<c:url value="/image?fname=${storeList.images}" var="imgUrl"></c:url>
+				<img class="img-responsive" src="${imgUrl}" width="200px">
+
 			</div>
 			<div class="modal-body">
 				<div class="row mb-4">
@@ -22,7 +26,7 @@
 							<div class="form-outline">
 								<label>Họ và tên</label><input type="text" class="form-control"
 									required="required" name="full_name" id="full_name"
-									disabled="disabled">
+									value="${userLogged.full_name}">
 							</div>
 						</div>
 					</div>
@@ -30,21 +34,24 @@
 						<div class="form-group">
 							<label>CCCD</label><input type="text" class="form-control"
 								required="required" name="id_card" id="id_card"
-								disabled="disabled">
+								value="${userLogged.id_card}">
 						</div>
 					</div>
 				</div>
 				<div class="form-group">
 					<label>Sdt</label><input type="text" class="form-control"
-						required="required" name="phone" id="phone" disabled="disabled">
+						required="required" name="phone" id="phone"
+						value="${userLogged.phone}">
 				</div>
 				<div class="form-group">
 					<label>Tài khoản</label><input type="text" class="form-control"
-						required="required" name="slug" id="slug">
+						required="required" name="slug" id="slug"
+						value="${userLogged.slug}">
 				</div>
 				<div class="form-group">
 					<label>Password</label><input type="text" class="form-control"
-						required="required" name="password" id="password">
+						required="required" name="password" id="password"
+						value="${userLogged.password}">
 				</div>
 				<div>
 					<label>Chọn role user</label> <select name="id_role" id="id_role"
@@ -55,11 +62,15 @@
 					</select>
 
 				</div>
+				<div class="form-group">
+					<c:url value="/image?fname=${avatar}" var="imgUrl"></c:url>
+					<label>Ảnh đại diện</label> <input type="file" class="form-control"
+						name="avatar" value="${avatar}" id="avatar" />
+				</div>
 			</div>
 			<div class="modal-footer">
-				<input type="button" class="btn btn-default" data-dismiss="modal"
-					value="Cancel"> <input type="submit" class="btn btn-info"
-					value="Save"> <input type="hidden" name="id" id="id">
+				 <input type="submit" class="btn btn-info"
+					value="Save"> <input type="hidden" name="id" id="id" value="${userLogged.id}">
 			</div>
 		</form>
 	</section>

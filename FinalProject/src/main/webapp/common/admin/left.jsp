@@ -119,12 +119,12 @@
 						<i class="nav-icon fas fa-inbox"></i>
 						<p>Quản lý đơn hàng</p>
 				</a></li> -->
-				<li class="nav-item"><a
+				<!-- <li class="nav-item"><a
 					href="{{ url_for('changes_password') }}"
 					class="nav-link ">
 						<i class="nav-icon fas fa-edit"></i>
 						<p>Quản lý doanh thu</p>
-				</a></li>
+				</a></li> -->
 				<li class="nav-item"><a href = "<c:url value = "/logout"/>" class="nav-link"> 
 				<i class="nav-icon fas fa-play"></i>
 						<p>Logout</p>
