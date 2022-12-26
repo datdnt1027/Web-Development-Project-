@@ -34,7 +34,7 @@ public class UserManagementController extends HttpServlet {
 		resp.setCharacterEncoding("UTF-8");
 		req.setCharacterEncoding("UTF-8");
 		HttpSession session = req.getSession();
-		User obj = (User)session.getAttribute("userLogin");
+		User obj = (User)session.getAttribute("account");
 
 		if(obj == null) {
 			resp.sendRedirect(req.getContextPath() + "/login");

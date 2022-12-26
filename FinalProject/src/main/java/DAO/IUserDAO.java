@@ -28,4 +28,6 @@ public interface IUserDAO {
 
 	List<User> findUserByIdRole(int idRole);
 
+	User findByUserName(String username);
+
 }

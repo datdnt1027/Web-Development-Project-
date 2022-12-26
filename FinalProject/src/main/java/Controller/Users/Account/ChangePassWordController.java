@@ -33,7 +33,7 @@ public class ChangePassWordController extends HttpServlet{
 		UserServicesImpl service = new UserServicesImpl();
 		HttpSession session = req.getSession(false);
 		User account = (User) session.getAttribute("account");
-		service.updatepPass(password, account.getFullName());
+		service.updatepPass(password, account.getFull_name());
 		resp.sendRedirect(req.getContextPath() + "/user/myaccount");
 	}
 
