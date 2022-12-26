@@ -31,5 +31,18 @@ public class ProductServicesImpl implements IProductServices {
 	public Product findById(int id) {
 		return productDAO.findById(id);
 	}
-
+	
+	@Override
+	public List<Product> listProductActive(int idStore, int active){
+		return productDAO.listProductActive(idStore, active);
+	}
+	
+	@Override
+	public void blockProduct(int id) {
+		productDAO.blockProduct(id);
+	}
+	@Override
+	public void unblockProduct(int id) {
+		productDAO.unblockProduct(id);
+	}
 }

@@ -11,4 +11,7 @@ public interface IStoreServices {
 	void Delete(int StoreID);
 	void Edit(Store store);
 	Store FindById(int id);
+	List<Store> storeProductList();
+	void unblockStore(int id);
+	void blockStore(int id);
 }

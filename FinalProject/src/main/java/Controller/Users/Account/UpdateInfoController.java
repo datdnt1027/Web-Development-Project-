@@ -45,7 +45,7 @@ public class UpdateInfoController extends HttpServlet{
 			List<FileItem> items = servletFileUpload.parseRequest(req);
 			for (FileItem item : items) {
 				if (item.getFieldName().equals("full_name")) {
-					user.setFullName(item.getString("UTF-8"));
+					user.setFull_name(item.getString("UTF-8"));
 				}
 				if (item.getFieldName().equals("id_card")) {
 					user.setId_card(item.getString("UTF-8"));
@@ -66,7 +66,7 @@ public class UpdateInfoController extends HttpServlet{
 			UserServicesImpl service = new UserServicesImpl();
 			HttpSession session = req.getSession(false);
 			User account = (User) session.getAttribute("account");
-			service.updateInfor(user.getFullName(),user.getId_card(),user.getPhone(),user.getAvatar(), account.getFullName());
+			service.updateInfor(user.getFull_name(),user.getId_card(),user.getPhone(),user.getAvatar(), account.getFull_name());
 			resp.sendRedirect(req.getContextPath() + "/user/myaccount");
 		} catch (Exception e) {
 			e.printStackTrace();

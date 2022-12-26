@@ -10,4 +10,7 @@ public interface IProductServices {
 	void Delete(int idProduct);
 	void Update(Product prduct);
 	Product findById(int id);
+	List<Product> listProductActive(int idStore, int active);
+	void unblockProduct(int id);
+	void blockProduct(int id);
 }

@@ -25,7 +25,7 @@ public class UserDaoImpl extends Connection implements IUserDao{
 		user.setId_role(rs.getInt("id_role"));
 		user.setSlug(rs.getString("slug"));
 		user.setId_card(rs.getString("id_card"));
-		user.setFullName(rs.getString("full_name"));
+		user.setFull_name(rs.getString("full_name"));
 		user.setPassword(rs.getString("password"));
 		user.setAvatar(rs.getString("avatar"));
 		user.setPhone(rs.getString("phone"));
@@ -43,7 +43,7 @@ public class UserDaoImpl extends Connection implements IUserDao{
 		try {
 			java.sql.Connection conn = super.getConnection();
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, user.getFullName());
+			ps.setString(1, user.getFull_name());
 			ps.setString(2, user.getSlug());
 			ps.setString(3, user.getId_card());
 			ps.setString(4, user.getPhone());

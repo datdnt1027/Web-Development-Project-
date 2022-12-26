@@ -1,7 +1,6 @@
 package Model;
 
 import java.sql.Date;
-import java.util.BitSet;
 
 
 public class Store {
@@ -10,12 +9,16 @@ public class Store {
 	   private String bio;
 	   private String slug;
 	   private int ownerId;
+	   private String nameOwner;
 	   private boolean isActive;
 	   private String avatar;
 	   private int commissionId ;
+	   private String nameCommission;
 	   private float e_wallet;
 	   private Date createdAt;
 	   private Date updatedAt ;
+	   private int numberProductActive;
+	   private int numberProductInactive;
 	public Store() {
 	}
 	public Store(int id, String name, String bio, String slug, int ownerId, boolean isActive, String avatar,
@@ -98,6 +101,32 @@ public class Store {
 	}
 	public void setUpdatedAt(Date updatedAt) {
 		this.updatedAt = updatedAt;
+	}
+	
+	public String getNameOwner() {
+		return nameOwner;
+	}
+	public void setNameOwner(String nameOwner) {
+		this.nameOwner = nameOwner;
+	}
+	public String getNameCommission() {
+		return nameCommission;
+	}
+	public void setNameCommission(String nameCommission) {
+		this.nameCommission = nameCommission;
+	}
+	
+	public int getNumberProductActive() {
+		return numberProductActive;
+	}
+	public void setNumberProductActive(int numberProductActive) {
+		this.numberProductActive = numberProductActive;
+	}
+	public int getNumberProductInactive() {
+		return numberProductInactive;
+	}
+	public void setNumberProductInactive(int numberProductInactive) {
+		this.numberProductInactive = numberProductInactive;
 	}
 	@Override
 	public String toString() {
