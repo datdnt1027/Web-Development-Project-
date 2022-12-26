@@ -43,9 +43,24 @@ public class StoreServicesImpl extends Connection implements IStoreServices {
 	public Store FindById(int id) {
 		return storeDAO.FindById(id);
 	}
-	
+
 	@Override
 	public List<Store> findByUser(int userId) {
 		return storeDAO.finByUser(userId);
+	}
+
+	@Override
+	public List<Store> storeProductList() {
+		return storeDAO.storeProductList();
+	}
+	
+	@Override
+	public void blockStore(int id) {
+		storeDAO.blockStore(id);
+	}
+	
+	@Override
+	public void unblockStore(int id) {
+		storeDAO.unblockStore(id);
 	}
 }

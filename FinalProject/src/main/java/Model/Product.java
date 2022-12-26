@@ -11,7 +11,9 @@ public class Product {
 	  private boolean isActive ;
 	  private String images ;
 	  private int categoryId ;
+	  private String categoryName;
 	  private int storeId ;
+	  private String storeName;
 	public Product() {
 
 	}
@@ -95,6 +97,19 @@ public class Product {
 	}
 	public void setStoreId(int storeId) {
 		this.storeId = storeId;
+	}
+	
+	public String getCategoryName() {
+		return categoryName;
+	}
+	public void setCategoryName(String categoryName) {
+		this.categoryName = categoryName;
+	}
+	public String getStoreName() {
+		return storeName;
+	}
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
 	}
 	@Override
 	public String toString() {

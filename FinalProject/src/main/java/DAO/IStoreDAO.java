@@ -11,5 +11,8 @@ public interface IStoreDAO {
 	void Delete(int storeId);
 	void EditStore(Store store);
 	Store FindById(int id);
+	List<Store> storeProductList();
+	void unblockStore(int id);
+	void blockStore(int id);
 	
 }

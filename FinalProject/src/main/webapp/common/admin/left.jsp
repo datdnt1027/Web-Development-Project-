@@ -12,33 +12,42 @@
 		<span class="brand-text font-weight-light">E.Store Manager</span>
 	</a>
 	<!-- Sidebar -->
+    <div class="sidebar">
+      <!-- Sidebar user panel (optional) -->
+      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+          <c:url value="/image?fname=${userLogged.avatar}" var="imgUrl"></c:url>
+          <img src="${imgUrl}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+          <a href="#" class="d-block">${userLogged.full_name}</a>
+        </div>
+      </div>
+	<!-- Sidebar -->
 	<div class="sidebar">
 		<!-- Sidebar user (optional) -->
 		<!-- Sidebar Menu -->
 		<nav class="mt-2">
 			<ul class="nav nav-pills nav-sidebar flex-column"
-				data-widget="treeview" role="menu" data-accordion="false">
+				data-widget="treeview" role="menu" data-accordion="false" onclick="closeNav()">
 				<!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-				<li class="nav-item has-treeview"><a href="#" class="nav-link ">
+				<li class="nav-item has-treeview"><a class="nav-link">
 						<i class="nav-icon fas fa-tachometer-alt"></i>
 						<p>
-							Cửa hàng<i class="right fas fa-angle-left"></i>
+							Quản lý user<i class="right fas fa-angle-left"></i>
 						</p>
 				</a>
 					<ul class="nav nav-treeview">
-						<li class="nav-item"><a href="http://127.0.0.1:5000/brands"
+					<c:forEach items="${roleList}" var="role">
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/admin/user_management/role?idRole=${role.id}"
 							class="nav-link {% if request.endpoint == 'admin_manager' %} active {% endif %}">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Quản lí cửa hàng</p>
+								<p>${role.roleName}</p>
 						</a></li>
-						<li class="nav-item"><a href="{{url_for('register')}}"
-							class="nav-link {% if request.endpoint == 'register' %} active {% endif %}">
-								<i class="far fa-circle nav-icon"></i>
-								<p>Thêm cửa hàng</p>
-						</a></li>
+						</c:forEach>
 					</ul></li>
-				<li
+				<!-- <li
 					class="nav-item has-treeview">
 					<a href="#"
 					class="nav-link ">
@@ -59,65 +68,65 @@
 								<p>Thêm nhãn</p>
 						</a></li>
 					</ul>
-				</li>
+				</li> -->
 				<li
 					class="nav-item has-treeview ">
-					<a href="#"
+					<a href="${pageContext.request.contextPath}/admin/categories/list"
 					class="nav-link ">
 						<i class="nav-icon far fa-plus-square"></i>
 						<p>
-							Loại sản phẩm <i class="right fas fa-angle-left"></i>
+							Quản lý danh mục <i class="right fas fa-angle-left"></i>
 						</p>
 				</a>
 					<ul class="nav nav-treeview">
-						<li class="nav-item"><a href="{{url_for('categories')}}"
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/admin/categories/add"
 							class="nav-link {% if request.endpoint == 'categories' %} active {% endif %}">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Quản lý sản phẩm</p>
+								<p>Thêm danh mục</p>
 						</a></li>
-						<li class="nav-item"><a href="{{url_for('addcat')}}"
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/admin/categories/list"
 							class="nav-link {% if request.endpoint == 'addcat' %} active {% endif %}">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Thêm sản phẩm</p>
+								<p>Quản lý danh mục</p>
 						</a></li>
 					</ul>
 				</li>
 				<li
 					class="nav-item has-treeview ">
-					<a href="{{url_for('product')}}"
+					<a href="${pageContext.request.contextPath}/admin/store/list"
 					class="nav-link ">
 						<i class="nav-icon fas fa-barcode"></i>
 						<p>
-							Sản phẩm <i class="right fas fa-angle-left"></i>
+							Quản lý cửa hàng <!-- <i class="right fas fa-angle-left"></i> -->
 						</p>
 				</a>
-					<ul class="nav nav-treeview">
+					<%-- <ul class="nav nav-treeview">
 						<li class="nav-item"><a href="{{url_for('product')}}"
 							class="nav-link {% if request.endpoint == 'product' %} active {% endif %}">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Quản lí sản phẩm</p>
+								<p>Thêm cửa hàng</p>
 						</a></li>
-						<li class="nav-item"><a href="{{url_for('addproduct')}}"
+						<li class="nav-item"><a href="${pageContext.request.contextPath}/admin/store/list"
 							class="nav-link {% if request.endpoint == 'addproduct' %} active {% endif %}">
 								<i class="far fa-circle nav-icon"></i>
-								<p>Thêm sản phẩm</p>
+								<p>Danh sách cửa hàng</p>
 						</a></li>
-					</ul>
+					</ul> --%>
 				</li>
 
-				<li class="nav-item"><a href="{{ url_for('orders_manager')}}"
+				<!-- <li class="nav-item"><a href="{{ url_for('orders_manager')}}"
 					class="nav-link ">
 						<i class="nav-icon fas fa-inbox"></i>
-						<p>Quản lí đơn hàng</p>
-				</a></li>
+						<p>Quản lý đơn hàng</p>
+				</a></li> -->
 				<li class="nav-item"><a
 					href="{{ url_for('changes_password') }}"
 					class="nav-link ">
 						<i class="nav-icon fas fa-edit"></i>
-						<p>Quản lí doanh thu</p>
+						<p>Quản lý doanh thu</p>
 				</a></li>
-				<li class="nav-item"><a href="{{ url_for('logout') }}"
-					class="nav-link"> <i class="nav-icon fas fa-play"></i>
+				<li class="nav-item"><a href = "<c:url value = "/logout"/>" class="nav-link"> 
+				<i class="nav-icon fas fa-play"></i>
 						<p>Logout</p>
 				</a></li>
 			</ul>

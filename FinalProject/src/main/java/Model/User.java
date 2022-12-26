@@ -15,24 +15,6 @@ public class User {
 	   private boolean isActive;
 	   private Date createdAt;
 	   private Date updatedAt;
-	public User() {
-
-	}
-	public User(int id, int id_role, String full_name, String slug, String id_card, String phone, String password,
-			String avatar, int point, boolean isActive, Date createdAt, Date updatedAt) {
-		this.id = id;
-		this.id_role = id_role;
-		this.full_name = full_name;
-		this.slug = slug;
-		this.id_card = id_card;
-		this.phone = phone;
-		this.password = password;
-		this.avatar = avatar;
-		this.point = point;
-		this.isActive = isActive;
-		this.createdAt = createdAt;
-		this.updatedAt = updatedAt;
-	}
 	public int getId() {
 		return id;
 	}
@@ -111,5 +93,28 @@ public class User {
 				+ id_card + ", phone=" + phone + ", password=" + password + ", avatar=" + avatar + ", point=" + point
 				+ ", isActive=" + isActive + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
+	public User(int id, int id_role, String full_name, String slug, String id_card, String phone, String password,
+			String avatar, int point, boolean isActive, Date createdAt, Date updatedAt) {
+		super();
+		this.id = id;
+		this.id_role = id_role;
+		this.full_name = full_name;
+		this.slug = slug;
+		this.id_card = id_card;
+		this.phone = phone;
+		this.password = password;
+		this.avatar = avatar;
+		this.point = point;
+		this.isActive = isActive;
+		this.createdAt = createdAt;
+		this.updatedAt = updatedAt;
+	}
+	public User() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	   
 	   
 }
