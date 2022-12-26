@@ -12,7 +12,7 @@
     <title>Vendor</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    
     <!-- Font Awesome -->
     <link rel="stylesheet" href="${template}admin/plugins/fontawesome-free/css/all.min.css">
     <!-- Ionicons -->
@@ -46,7 +46,6 @@
 <script src="s${template}admin/plugins/jquery-mapael/maps/usa_states.min.js "></script>
 <!-- PAGE SCRIPTS -->
 <script src="${template}admin/js/pages/dashboard2.js "></script>
-
 <!-- DataTables -->
 <script src="${template}admin/plugins/datatables/jquery.dataTables.min.js  "></script>
 <script src="${template}admin/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js  "></script>
@@ -55,6 +54,8 @@
 <script src="${template}admin/js/adminlte.min.js "></script>
 <!-- AdminLTE for demo purposes -->
 <script src="${template}admin/js/demo.js "></script>
+
+
 <script>
       $(function () {
         $("#example1").DataTable({

@@ -1,6 +1,8 @@
 package Model;
 
 import java.sql.Date;
+import java.util.BitSet;
+
 
 public class Store {
 	   private int id;
@@ -103,5 +105,6 @@ public class Store {
 				+ ", isActive=" + isActive + ", avatar=" + avatar + ", commissionId=" + commissionId + ", e_wallet="
 				+ e_wallet + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
+
 	   
 }

@@ -5,7 +5,7 @@ import java.sql.Date;
 public class User {
 	   private int id ;
 	   private int id_role;
-	   private String full_name;
+	   private String fullName;
 	   private String slug;
 	   private String id_card; 
 	   private String phone;
@@ -15,14 +15,11 @@ public class User {
 	   private boolean isActive;
 	   private Date createdAt;
 	   private Date updatedAt;
-	public User() {
-
-	}
-	public User(int id, int id_role, String full_name, String slug, String id_card, String phone, String password,
+	public User(int id, int id_role, String fullName, String slug, String id_card, String phone, String password,
 			String avatar, int point, boolean isActive, Date createdAt, Date updatedAt) {
 		this.id = id;
 		this.id_role = id_role;
-		this.full_name = full_name;
+		this.fullName = fullName;
 		this.slug = slug;
 		this.id_card = id_card;
 		this.phone = phone;
@@ -32,6 +29,8 @@ public class User {
 		this.isActive = isActive;
 		this.createdAt = createdAt;
 		this.updatedAt = updatedAt;
+	}
+	public User() {
 	}
 	public int getId() {
 		return id;
@@ -45,11 +44,11 @@ public class User {
 	public void setId_role(int id_role) {
 		this.id_role = id_role;
 	}
-	public String getFull_name() {
-		return full_name;
+	public String getFullName() {
+		return fullName;
 	}
-	public void setFull_name(String full_name) {
-		this.full_name = full_name;
+	public void setFullName(String fullName) {
+		this.fullName = fullName;
 	}
 	public String getSlug() {
 		return slug;
@@ -107,9 +106,8 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", id_role=" + id_role + ", full_name=" + full_name + ", slug=" + slug + ", id_card="
+		return "User [id=" + id + ", id_role=" + id_role + ", fullName=" + fullName + ", slug=" + slug + ", id_card="
 				+ id_card + ", phone=" + phone + ", password=" + password + ", avatar=" + avatar + ", point=" + point
 				+ ", isActive=" + isActive + ", createdAt=" + createdAt + ", updatedAt=" + updatedAt + "]";
 	}
-	   
 }

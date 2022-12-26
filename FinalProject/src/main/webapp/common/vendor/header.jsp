@@ -1,9 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ include file="/common/taglib.jsp" %>
     
  <!-- Site wrapper -->
-<div class="wrapper">
+
     <!-- Navbar -->
     <nav class="main-header navbar navbar-expand navbar-white navbar-light">
         <!-- Left navbar links -->
@@ -12,19 +12,22 @@
                 <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
             </li>
             <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{url_for('home')}}" class="nav-link">Home</a>
+                <a href="#" class="nav-link">WELLCOME,${sessionScope.account.slug}</a>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{url_for('admin_manager')}}" class="nav-link">Admin</a>
+            
+           <li class="nav-item d-none d-sm-inline-block">
+                <form action="${pageContext.request.contextPath}/vendor/logout">
+                	<button type="submit" class="btn btn-info">Logout </button>
+                </form>
             </li>
-            <li class="nav-item d-none d-sm-inline-block">
-                <a href="{{url_for('product')}}" class="nav-link">Product</a>
-            </li>
+<!--             <li class="nav-item d-none d-sm-inline-block">
+                <a href="#" class="nav-link">Product</a>
+            </li>  -->
         </ul>
         <!-- SEARCH FORM -->
-        <form class="form-inline ml-3">
+        <form class="form-inline ml-3" action="${pageContext.request.contextPath}/vendor/search">
             <div class="input-group input-group-sm">
-                <input class="form-control form-control-navbar" type="search" placeholder="Search" aria-label="Search">
+                <input name="keyWord" class="form-control form-control-navbar" type="search" placeholder="Search in all store" aria-label="Search">
                 <div class="input-group-append">
                     <button class="btn btn-navbar" type="submit">
                         <i class="fas fa-search"></i>
@@ -36,158 +39,36 @@
     <!-- /.navbar -->
     <!-- Main Sidebar Container -->
     <aside class="main-sidebar sidebar-dark-primary elevation-4">
-        <!-- Brand Logo -->
-        <a href="admin" class="brand-link">
-            <img src="{{url_for('static',filename='images/phone.jpg')}}"
-                 alt="Logo"
-                 class="brand-image img-circle elevation-3"
-                 style="opacity: .8">
-            <span class="brand-text font-weight-light">E.Store Manager</span>
+        <a href="${pageContext.request.contextPath}/vendor/home?userId=${sessionScope.account.id}" class="brand-link">
+            <span class="brand-text font-weight-light">Store Manager</span>
         </a>
-        <!-- Sidebar -->
         <div class="sidebar">
-            <!-- Sidebar user (optional) -->
-            <!-- Sidebar Menu -->
             <nav class="mt-2">
                 <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu"
                     data-accordion="false">
-                    <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-                    <li class="nav-item has-treeview">
-                        <a href="#"
-                           class="nav-link ">
-                            <i class="nav-icon fas fa-tachometer-alt"></i>
-                            <p>Cửa hàng
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="http://127.0.0.1:5000/brands"
-                                   class="nav-link {% if request.endpoint == 'admin_manager' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Quản lí cửa hàng</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url_for('register')}}"
-                                   class="nav-link {% if request.endpoint == 'register' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm cửa hàng</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview {% if request.endpoint == 'brands' or request.endpoint == 'addbrand' %} menu-open {% endif %}">
-                        <a href="#"
-                           class="nav-link {% if request.endpoint == 'brands' or request.endpoint == 'addbrand' %} active {% endif %}">
-                            <i class="nav-icon fas fa-table"></i>
-                            <p>
-                                Nhãn hàng
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{url_for('brands')}}"
-                                   class="nav-link {% if request.endpoint == 'brands' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Quản lí nhãn hàng</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url_for('addbrand')}}"
-                                   class="nav-link {% if request.endpoint == 'addbrand' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm nhãn</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview {% if request.endpoint == 'categories' or request.endpoint == 'addcat' %} menu-open {% endif %}">
-                        <a href="#"
-                           class="nav-link {% if request.endpoint == 'categories' or request.endpoint == 'addcat' %} active {% endif %}">
-                            <i class="nav-icon far fa-plus-square"></i>
-                            <p>
-                                Loại sản phẩm
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{url_for('categories')}}"
-                                   class="nav-link {% if request.endpoint == 'categories' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Quản lí loại sản phẩm</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url_for('addcat')}}"
-                                   class="nav-link {% if request.endpoint == 'addcat' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm sản phẩm</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-                    <li class="nav-item has-treeview {% if request.endpoint == 'product' or request.endpoint == 'addproduct' %} menu-open {% endif %}">
-                        <a href="{{url_for('product')}}"
-                           class="nav-link {% if request.endpoint == 'product' or request.endpoint == 'addproduct' %} active {% endif %}">
-                            <i class="nav-icon fas fa-barcode"></i>
-                            <p>
-                                Sản phẩm
-                                <i class="right fas fa-angle-left"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{url_for('product')}}"
-                                   class="nav-link {% if request.endpoint == 'product' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Quản lí sản phẩm</p>
-                                </a>
-                            </li>
-                            <li class="nav-item">
-                                <a href="{{url_for('addproduct')}}"
-                                   class="nav-link {% if request.endpoint == 'addproduct' %} active {% endif %}">
-                                    <i class="far fa-circle nav-icon"></i>
-                                    <p>Thêm sản phẩm</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-                    <li class="nav-item">
-                        <a href="{{ url_for('orders_manager')}}"
-                           class="nav-link {% if request.endpoint == 'orders' %} active {% endif %}">
-                            <i class="nav-icon fas fa-inbox"></i>
-                            <p>
-                                Quản lí đơn hàng
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url_for('changes_password') }}"
-                           class="nav-link {% if request.endpoint == 'changes_password' %} active {% endif %}">
-                            <i class="nav-icon fas fa-edit"></i>
-                            <p>
-                                Quản lí doanh thu
-                            </p>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="{{ url_for('logout') }}" class="nav-link">
-                            <i class="nav-icon fas fa-play"></i>
-                            <p>
-                                Logout
-                            </p>
-                        </a>
-                    </li>
-                </ul>
+					<li class="nav-item"><a href="${pageContext.request.contextPath }/vendor/store?userId=${sessionScope.account.id}"
+						class="nav-link"> <i class="nav-icon fas fa-store"></i>
+							<p>Store</p>
+					</a></li>
+					
+					<li class="nav-item"><a href="${pageContext.request.contextPath }/vendor/order?userId=${sessionScope.account.id}"
+						class="nav-link"> <i class="nav-icon fas fa-circle"></i>
+							<p>Order</p>
+					</a></li>
+					<li class="nav-item"><a href="${pageContext.request.contextPath }/vendor/transaction?userId=${sessionScope.account.id}"
+						class="nav-link"> <i class="nav-icon fab fa-amazon-pay"></i>
+							<p>Transaction</p>
+					</a></li>
+					<li class="nav-item"><a href="${pageContext.request.contextPath }/vendor/report?userId=${sessionScope.account.id}"
+						class="nav-link"> <i class="nav-icon fas fa-caret-square-down"></i>
+							<p>Report</p>
+					</a></li>
+				</ul>
             </nav>
-            <!-- /.sidebar-menu -->
         </div>
-        <!-- /.sidebar -->
+
     </aside>
-    <!-- //////////////////////////////////////////////////////////////////////-->
+    
+
+
  
