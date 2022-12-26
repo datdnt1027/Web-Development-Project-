@@ -168,20 +168,20 @@
 										<div class="form-outline">
 											<label>Họ và tên</label><input type="text"
 												class="form-control" required="required" name="full_name"
-												id="full_name">
+												id="full_name" disabled="disabled">
 										</div>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group">
 										<label>CCCD</label><input type="text" class="form-control"
-											required="required" name="id_card" id="id_card">
+											required="required" name="id_card" id="id_card" disabled="disabled">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Sdt</label><input type="text" class="form-control"
-									required="required" name="phone" id="phone">
+									required="required" name="phone" id="phone" disabled="disabled">
 							</div>
 							<div class="form-group">
 								<label>Tài khoản</label><input type="text" class="form-control"
@@ -199,12 +199,6 @@
 									</c:forEach>
 								</select>
 
-							</div>
-							<div class="form-group">
-								<c:url value="/image?fname=${avatar}" var="imgUrl"></c:url>
-								<label>Ảnh đại diện</label> <input type="file"
-									class="form-control" name="avatar" value="${avatar}"
-									id="avatar" />
 							</div>
 						</div>
 						<div class="modal-footer">

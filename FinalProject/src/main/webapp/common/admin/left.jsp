@@ -20,7 +20,7 @@
           <img src="${imgUrl}" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="#" class="d-block">${userLogged.full_name}</a>
+          <a href="${pageContext.request.contextPath}/admin/info" class="d-block">${userLogged.full_name}</a>
         </div>
       </div>
 	<!-- Sidebar -->

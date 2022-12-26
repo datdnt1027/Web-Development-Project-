@@ -42,7 +42,7 @@
           <div class="card-body text-center">
             <img src="${pageContext.request.contextPath}/assets/images/userVendor/${user.avatar}" alt="avatar"
               class="rounded-circle img-fluid" style="width: 150px;">
-            <h5 class="my-3">${user.fullName}</h5>
+            <h5 class="my-3">${user.full_name}</h5>
             <p class="text-muted mb-1">Your Profile</p>
           </div>
         </div>
@@ -58,7 +58,7 @@
                 <p class="mb-0">Full Name</p>
               </div>
               <div class="col-sm-9">
-                <p class="text-muted mb-0">${user.fullName}</p>
+                <p class="text-muted mb-0">${user.full_name}</p>
               </div>
             </div>
             <hr>
@@ -121,4 +121,3 @@
     </section>
     <!-- /.content -->
 </div>
-
