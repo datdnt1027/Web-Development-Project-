@@ -168,20 +168,20 @@
 										<div class="form-outline">
 											<label>Họ và tên</label><input type="text"
 												class="form-control" required="required" name="full_name"
-												id="full_name" disabled="disabled">
+												id="full_name">
 										</div>
 									</div>
 								</div>
 								<div class="col">
 									<div class="form-group">
 										<label>CCCD</label><input type="text" class="form-control"
-											required="required" name="id_card" id="id_card" disabled="disabled">
+											required="required" name="id_card" id="id_card">
 									</div>
 								</div>
 							</div>
 							<div class="form-group">
 								<label>Sdt</label><input type="text" class="form-control"
-									required="required" name="phone" id="phone" disabled="disabled">
+									required="required" name="phone" id="phone">
 							</div>
 							<div class="form-group">
 								<label>Tài khoản</label><input type="text" class="form-control"
